@@ -6,7 +6,6 @@ interface Testimonial {
   quote: string;
   author: string;
   role: string;
-  track: string;
 }
 
 const reviews: Testimonial[] = [
@@ -14,19 +13,16 @@ const reviews: Testimonial[] = [
     quote: "The training transformed our leadership team's approach to communication. We've seen a marked increase in engagement and clarity across all departments.",
     author: "Jane Doe",
     role: "HR Director at TechCorp",
-    track: "Corporate Cohorts"
   },
   {
     quote: "Our graduate students entered their global interview rounds with unprecedented command over vocal range and confidence. Placement rates rose by 18% directly after.",
     author: "Prof. Alistair Vance",
     role: "Dean of Studies, Vance College",
-    track: "Institutional Track"
   },
   {
     quote: "As a founder pitch-coached under the Aura framework, the systematic alignment of physical posture, pacing, and clear statements completely redefined how I raise capital.",
     author: "Marcus Sterling",
     role: "CEO & Founder, Sterling Ventures",
-    track: "Executive 1-on-1 VIP"
   }
 ];
 
@@ -67,10 +63,6 @@ export default function Testimonials() {
               <div className="mt-8">
                 <p className="font-extrabold text-base text-primary font-display">{reviews[activeIndex].author}</p>
                 <p className="text-xs sm:text-sm text-on-surface-variant font-medium mt-0.5">{reviews[activeIndex].role}</p>
-                
-                <span className="inline-block mt-3 text-[10px] font-bold text-secondary bg-secondary-container/20 uppercase tracking-widest px-2.5 py-1 rounded-md">
-                  {reviews[activeIndex].track}
-                </span>
               </div>
             </motion.div>
           </AnimatePresence>

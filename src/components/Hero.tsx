@@ -1,11 +1,9 @@
 import * as React from 'react';
 import { motion } from 'motion/react';
-import { ShieldCheck, Play, X, Volume2, VolumeX } from 'lucide-react';
+import { ShieldCheck, Play, X, Volume2 } from 'lucide-react';
 
 export default function Hero() {
-  const [showVideo, setShowVideo] = React.useState(false);
-  const [isPlaying, setIsPlaying] = React.useState(true);
-  const [isMuted, setIsMuted] = React.useState(true);
+  const [showAudio, setShowAudio] = React.useState(false);
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -70,7 +68,7 @@ export default function Hero() {
             variants={itemVariants}
             className="text-base sm:text-lg text-on-surface-variant max-w-xl font-normal leading-relaxed"
           >
-            Master the art of executive presence. Our tailored leadership training programs equip modern professionals with the soft skills needed to lead with authority and empathy.
+            Master the art of executive presence. My tailored leadership training programs equip modern professionals with the soft skills needed to lead with authority and empathy.
           </motion.p>
 
           <motion.div variants={itemVariants} className="flex flex-wrap gap-4 pt-2">
@@ -81,11 +79,11 @@ export default function Hero() {
               Explore Modules
             </button>
             <button
-              onClick={() => setShowVideo(true)}
+              onClick={() => setShowAudio(true)}
               className="px-8 py-4 border border-outline text-primary rounded-xl font-bold hover:bg-surface-container transition-all duration-300 flex items-center gap-2 cursor-pointer"
             >
-              <Play size={18} fill="currentColor" />
-              Watch Showreel
+              <Volume2 size={18} fill="currentColor" />
+              Listen to Interview
             </button>
           </motion.div>
         </motion.div>
@@ -103,7 +101,7 @@ export default function Hero() {
 
             <div className="rounded-2xl overflow-hidden shadow-[0px_30px_50px_rgba(15,23,42,0.1)] border border-white/20">
               <img
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBmfvyPGSNgV2RoQx-sgXRe-w8cepzFHyiB7OAmLVcNqAJMlhuu-D9GMrA5fMretpNJy0vIq4ByPYvC2oaSIMNtTT7FwMOLckk_i9O8JlqrHn-QdTg3GmkDYLHA2TmLOMXOvWocCFR40Af5a-23I5ueI47W1btC1pWhNzNL7WJkcY8P6sF6ieQDMFIA7u07UXcJ_k-qlN-GJh9X7VQ3GGLh-KrVDp8If3azB1jT5aVxnZVfn9eeVq0dYlcBSAvM5D4IeEtDH-uU-Orj"
+                src="./images/hero.jpeg"
                 alt="Executive portrait of mid-40s professional woman in light-flooded modern office representing master soft skills coach"
                 className="w-full h-auto object-cover aspect-[4/5]"
                 referrerPolicy="no-referrer"
@@ -129,83 +127,35 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Showreel Interactive Video Modal Popup */}
-      {showVideo && (
+      {showAudio && (
         <div className="fixed inset-0 bg-primary-container/85 backdrop-blur-md z-[100] flex items-center justify-center p-4">
-          <div className="bg-white dark:bg-surface-container-lowest rounded-2xl overflow-hidden shadow-2xl w-full max-w-3xl border border-outline-variant/30 dark:border-outline-variant/10 relative text-on-surface">
+          <div className="bg-white dark:bg-surface-container-lowest rounded-2xl overflow-hidden shadow-2xl w-full max-w-md border border-outline-variant/30 dark:border-outline-variant/10 relative text-on-surface">
             <div className="p-4 bg-surface-container border-b border-outline-variant flex justify-between items-center">
-              <span className="font-bold text-sm tracking-wider uppercase text-on-surface">ELITE COMMUNICATOR SHOWREEL</span>
+              <span className="font-bold text-sm tracking-wider uppercase text-on-surface">INTERVIEW ON AKASHWANI IGNOU FM</span>
               <button
-                onClick={() => setShowVideo(false)}
+                onClick={() => setShowAudio(false)}
                 className="p-1 hover:bg-surface-container-high rounded-full transition-colors"
-                aria-label="Close Showreel"
+                aria-label="Close Audio"
               >
                 <X size={20} className="text-on-surface" />
               </button>
             </div>
 
-            {/* Custom Interactive Simulated Video Player Interface */}
-            <div className="aspect-[16/9] bg-primary relative group">
-              {isPlaying ? (
-                <div className="absolute inset-0 flex flex-col justify-end p-6 bg-gradient-to-t from-black/80 via-transparent to-black/30 text-white select-none">
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="w-16 h-16 rounded-full bg-white/15 backdrop-blur-sm border border-white/20 flex items-center justify-center text-white text-lg font-semibold animate-pulse">
-                      AURA
-                    </div>
-                  </div>
-                  
-                  <div className="space-y-3 z-10">
-                    <p className="text-sm font-bold tracking-widest text-secondary-container">CHAPTER 1: POWER & EMPATHY</p>
-                    <h3 className="text-xl md:text-2xl font-bold font-display">Refining the Voice of Modern Leadership</h3>
-                    
-                    {/* Progress Bar scrubber */}
-                    <div className="w-full bg-white/20 h-1.5 rounded-full overflow-hidden">
-                      <div className="bg-secondary-container h-full w-2/3 rounded-full animate-[shrink-width_20s_infinite_linear]" style={{ transformOrigin: 'left' }} />
-                    </div>
-                    
-                    {/* Simulated Controls */}
-                    <div className="flex justify-between items-center text-xs mt-2 text-white/80">
-                      <div className="flex items-center gap-4">
-                        <button onClick={() => setIsPlaying(false)} className="hover:text-white font-bold">PAUSE</button>
-                        <span>01:14 / 02:30</span>
-                      </div>
-                      <button 
-                        onClick={() => setIsMuted(!isMuted)} 
-                        className="hover:text-white flex items-center gap-1.5"
-                      >
-                        {isMuted ? <VolumeX size={14} /> : <Volume2 size={14} />}
-                        {isMuted ? 'UNMUTE AUDIOS' : 'SOUND ON'}
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              ) : (
-                <div className="absolute inset-0 flex items-center justify-center bg-black/70 cursor-pointer" onClick={() => setIsPlaying(true)}>
-                  <div className="w-20 h-20 rounded-full bg-secondary-container text-[#1e150a] flex items-center justify-center shadow-lg transition-transform hover:scale-105">
-                    <Play size={32} fill="currentColor" className="ml-1" />
-                  </div>
-                </div>
-              )}
+            <div className="p-8 bg-surface-container-lowest flex flex-col items-center justify-center gap-6 relative w-full">
+              <div className="w-20 h-20 rounded-full bg-secondary-container flex items-center justify-center text-[#1e150a] shadow-inner animate-pulse">
+                <Volume2 size={36} />
+              </div>
+
+              <audio
+                className="w-full outline-none"
+                controls
+                autoPlay
+                src="/showreel.mp3"
+              >
+                Your browser does not support the audio element.
+              </audio>
             </div>
 
-            {/* Under Video Content */}
-            <div className="p-6 bg-surface-container-low text-on-surface">
-              <p className="text-sm font-medium mb-2 text-on-surface-variant">
-                Featuring highlights from our specialized 2026 Executive Bootcamp. Learn how to control vocal fry, master non-verbal authority cues, and deliver statements with extreme precision.
-              </p>
-              <div className="text-xs bg-secondary-container/20 text-on-secondary-container p-3 rounded-lg flex items-center justify-between border border-secondary-container/40">
-                <span>⚡ Limited Capacity: Our winter cohorts are currently 90% booked.</span>
-                <button 
-                  onClick={() => {
-                    setShowVideo(false);
-                    scrollToServices();
-                  }}
-                  className="font-bold underline uppercase tracking-widest text-[10px] hover:text-primary transition-colors"
-                >
-                  View Cohorts →
-                </button>
-              </div>
-            </div>
           </div>
         </div>
       )}
