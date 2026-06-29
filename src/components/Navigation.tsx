@@ -85,7 +85,7 @@ export default function Navigation() {
   };
 
   return (
-    <nav className="fixed top-0 left-0 w-full z-50 bg-white/80 dark:bg-surface-container-low/85 backdrop-blur-md shadow-[0px_30px_50px_rgba(15,23,42,0.05)] border-b border-surface-container transition-colors duration-300">
+    <nav className="fixed top-0 left-0 w-full z-50 bg-surface-container-low/80 dark:bg-surface-container-low/85 backdrop-blur-md shadow-[0px_30px_50px_rgba(15,23,42,0.05)] border-b border-surface-container transition-colors duration-300">
       <div className="flex justify-between items-center px-4 md:px-16 py-4 max-w-7xl mx-auto">
         <a 
           href="#" 
@@ -161,7 +161,7 @@ export default function Navigation() {
 
       {/* Mobile Dropdown Menu */}
       {mobileMenuOpen && (
-        <div className="md:hidden bg-white dark:bg-surface-container-low border-t border-surface-container animate-fade-in transition-colors duration-300">
+        <div className="md:hidden bg-surface-container-low border-t border-surface-container animate-fade-in transition-colors duration-300">
           <div className="flex flex-col px-4 py-4 space-y-4">
             {navLinks.map((link) => (
               <a

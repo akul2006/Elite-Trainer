@@ -54,7 +54,7 @@ export default function Services({ selectedTrack, onTrackSelect }: ServicesProps
   ];
 
   return (
-    <section id="services" className="scroll-mt-20 py-20 bg-white dark:bg-surface-container-low px-4 md:px-16 max-w-7xl mx-auto transition-colors duration-300">
+    <section id="services" className="scroll-mt-20 py-20 bg-surface dark:bg-surface-container-low px-4 md:px-16 max-w-7xl mx-auto transition-colors duration-300">
       <div className="text-center mb-16">
         <h2 className="text-3xl md:text-4xl font-semibold text-primary font-display">
           Specialized Training Tracks
@@ -70,7 +70,7 @@ export default function Services({ selectedTrack, onTrackSelect }: ServicesProps
           <div
             key={track.id}
             onClick={() => onTrackSelect(track.id)}
-            className={`group cursor-pointer bg-white dark:bg-surface-container-lowest rounded-2xl border p-8 hover:shadow-xl transition-all duration-300 flex flex-col justify-between ${
+            className={`group cursor-pointer bg-surface-container-lowest rounded-2xl border p-8 hover:shadow-xl transition-all duration-300 flex flex-col justify-between ${
               selectedTrack === track.id
                 ? 'border-amber-500 dark:border-amber-400 ring-2 ring-amber-500/40 dark:ring-amber-400/40 shadow-md scale-[1.01]'
                 : 'border-outline-variant/60 opacity-80 hover:opacity-100'

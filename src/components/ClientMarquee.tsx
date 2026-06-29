@@ -5,7 +5,6 @@ import { Sparkles } from 'lucide-react';
 interface Company {
   name: string;
   impact: string;
-  stat: string;
 }
 
 export default function ClientMarquee() {
@@ -14,33 +13,28 @@ export default function ClientMarquee() {
   const companies: Company[] = [
     { 
       name: 'HexaWare', 
-      impact: 'Coached engineering leaders to successfully pitch enterprise architecture overhauls to non-technical executives.',
-      stat: '+40% Project Approvals' 
+      impact: 'Train and evaluate new recruits in corporate soft skills and communication through engaging activities, ensuring a smooth transition into corporate life and preparing them for future leadership.'
     },
     { 
-      name: 'U.P. Police', 
-      impact: 'Refined presentation alignment for managing directors presenting quarterly macroeconomic forecasts.',
-      stat: '98% Client Engagement Score' 
+      name: 'Times Pro', 
+      impact: 'A project that was initiated by the DGP of UP and designed by TimesPro to impart Soft Skills sessions to the UP Police personnel.',
     },
     { 
       name: 'S.R.M.U University', 
-      impact: 'Redesigned the onboarding communication framework to foster immediate connection in high-turnover administrative roles.',
-      stat: '-20% Team Friction' 
+      impact: 'Manage the student lifecycle from admission counseling and curriculum development to skills training and stakeholder engagement, ensuring students are fully prepared for corporate placement.',
     },
     { 
-      name: 'Microsoft', 
-      impact: 'Delivered customized crises response speaking courses to senior PR and developer advocates.',
-      stat: 'Crisis Communications Certified' 
+      name: 'College Dekho', 
+      impact: 'Directs the end-to-end student engagement strategy, from initial admission to corporate readiness, through robust curriculum design, rigorous training evaluation, and stakeholder collaboration.',
     },
     { 
-      name: 'Azure Media', 
-      impact: 'Polished creative director pitch presentations for high-stakes account campaigns.',
-      stat: '$14M in New Contracts won' 
+      name: 'Global Talent Track', 
+      impact: 'Delivered interactive, tool-driven soft skills coaching and personality assessments across diverse disciplines to transition students from campus to corporate environments and boost employability.',
     }
   ];
 
   return (
-    <section className="py-12 border-y border-outline-variant/20 bg-white dark:bg-surface-container-low transition-colors duration-300">
+    <section className="py-12 border-y border-outline-variant/20 bg-surface dark:bg-surface-container-low transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 md:px-16">
         <p className="text-center text-xs font-bold text-outline mb-8 uppercase tracking-widest font-sans">
           Trusted by Industry Leaders
@@ -89,9 +83,6 @@ export default function ClientMarquee() {
             <p className="text-sm text-on-surface-variant leading-relaxed mb-3">
               "{selectedCompany.impact}"
             </p>
-            <div className="inline-block bg-secondary-container text-on-secondary-container px-3 py-1 rounded-md text-xs font-bold">
-              {selectedCompany.stat}
-            </div>
           </motion.div>
         )}
       </div>

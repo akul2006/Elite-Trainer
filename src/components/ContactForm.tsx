@@ -85,7 +85,7 @@ export default function ContactForm({ initialService, onServiceChange }: Contact
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
           
-          <div className="bg-white dark:bg-surface-container-lowest p-6 sm:p-10 rounded-2xl shadow-xl border border-outline-variant/20 relative">
+          <div className="bg-surface-container-lowest p-6 sm:p-10 rounded-2xl shadow-xl border border-outline-variant/20 relative">
             <h2 className="text-2xl sm:text-3xl font-bold text-primary font-display mb-6">
               Inquire for <span className="text-secondary capitalize">{form.subject.replace('-', ' ')}</span>
             </h2>
@@ -179,7 +179,7 @@ export default function ContactForm({ initialService, onServiceChange }: Contact
             </div>
 
             <div className="space-y-4">
-              <div className="flex items-center gap-4 p-5 bg-white dark:bg-surface-container-lowest rounded-2xl border border-outline-variant/30 group">
+              <div className="flex items-center gap-4 p-5 bg-surface-container-lowest rounded-2xl border border-outline-variant/30 group">
                 <div className="w-12 h-12 bg-secondary-container/20 rounded-xl flex items-center justify-center text-secondary shrink-0"><Mail size={22} /></div>
                 <div className="flex-1 min-w-0">
                   <p className="text-[10px] text-outline uppercase font-bold tracking-widest">Email Me</p>
@@ -188,7 +188,7 @@ export default function ContactForm({ initialService, onServiceChange }: Contact
                 <button type="button" onClick={copyEmailToClipboard} className="p-2 hover:bg-surface-container-high rounded-lg cursor-pointer">{copiedEmail ? <Check size={16} className="text-emerald-600" /> : <Copy size={16} />}</button>
               </div>
 
-              <a href="https://linkedin.com/in/garima-s-spn" target="_blank" rel="noreferrer noopener" className="flex items-center gap-4 p-5 bg-white dark:bg-surface-container-lowest rounded-2xl border border-outline-variant/30 group transition-all hover:shadow-md">
+              <a href="https://linkedin.com/in/garima-s-spn" target="_blank" rel="noreferrer noopener" className="flex items-center gap-4 p-5 bg-surface-container-lowest rounded-2xl border border-outline-variant/30 group transition-all hover:shadow-md">
                 <div className="w-12 h-12 bg-secondary-container/20 rounded-xl flex items-center justify-center text-secondary shrink-0"><Share2 size={22} /></div>
                 <div className="flex-1 min-w-0">
                   <p className="text-[10px] text-outline uppercase font-bold tracking-widest">LinkedIn Network</p>

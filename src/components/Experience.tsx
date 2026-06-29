@@ -70,7 +70,7 @@ export default function Experience() {
               viewport={{ once: true, margin: '-50px' }}
               transition={{ duration: 0.5, delay: idx * 0.1 }}
               whileHover={{ y: -4 }}
-              className={`cursor-pointer bg-white dark:bg-surface-container-lowest p-8 rounded-2xl shadow-[0px_30px_50px_rgba(15,23,42,0.03)] border transition-all duration-300 flex flex-col justify-between overflow-hidden relative ${
+              className={`cursor-pointer bg-surface-container-lowest p-8 rounded-2xl shadow-[0px_30px_50px_rgba(15,23,42,0.03)] border transition-all duration-300 flex flex-col justify-between overflow-hidden relative ${
                 activeCard === card.id 
                   ? 'border-secondary ring-1 ring-secondary' 
                   : 'border-outline-variant/30 dark:border-outline-variant/10 hover:border-outline-variant hover:shadow-[0px_30px_50px_rgba(15,23,42,0.06)]'
