@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Mail, Share2, MessageSquare, Copy, Check, CheckCircle2, Building, UserCircle, School, ChevronDown, FileText } from 'lucide-react';
+import { Mail, Share2, MessageSquare, Copy, Check, CheckCircle2, Building, UserCircle, School, ChevronDown, FileText, X } from 'lucide-react';
 
 interface FormState {
   name: string;
@@ -129,6 +129,16 @@ export default function ContactForm({ initialService, onServiceChange }: Contact
                 <div>
                   <p className="font-bold">Submitted Successfully</p>
                   <p className="text-xs opacity-90">Your inquiry has been stored in our system and sent successfully.</p>
+                </div>
+              </div>
+            )}
+
+            {submitStatus === 'error' && (
+              <div className="mb-6 p-4 bg-rose-50 dark:bg-rose-950/30 border border-rose-200 dark:border-rose-800 rounded-xl text-rose-800 dark:text-rose-200 text-sm flex items-start gap-3 animate-in fade-in slide-in-from-top-4 duration-300">
+                <X className="text-rose-500 shrink-0 mt-0.5" size={18} />
+                <div>
+                  <p className="font-bold">Submission Failed</p>
+                  <p className="text-xs opacity-90">There was a problem connecting to the server. Please try again or email us directly.</p>
                 </div>
               </div>
             )}
