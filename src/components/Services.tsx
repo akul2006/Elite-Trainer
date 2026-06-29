@@ -17,38 +17,38 @@ export default function Services({ selectedTrack, onTrackSelect }: ServicesProps
   const tracks: ServiceTrack[] = [
     {
       id: 'corporate',
-      title: 'Corporate Training',
-      features: ['Leadership Presence', 'Time Management', 'Professional Etiquette', 'Cross-Cultural Communication'],
+      title: 'Corporate & Professional Development',
+      features: ['Business Etiquette', 'Email Writing', 'Telephone Etiquette', 'Time Management', 'Service Orientation'],
       icon: <Users size={24} className="text-amber-600 dark:text-amber-400" />
     },
     {
       id: 'institutional',
-      title: 'Institutional',
-      features: ['Interview Preparation', 'Confidence Building', 'Group Discussions', 'Emotional Intelligence'],
+      title: 'Institutional Readiness',
+      features: ['Resume Writing', 'Interview Skills', 'Group Discussion Skills', 'Personality Development'],
       icon: <GraduationCap size={24} className="text-amber-600 dark:text-amber-400" />
     },
     {
       id: 'executive',
-      title: 'Executive 1-on-1',
-      features: ['Public Speaking', 'Personal Branding', 'Presentation Skills', 'Conflict Resolution'],
+      title: 'Executive & Leadership',
+      features: ['Training and Mentoring', 'Ownership', 'SWOT Analysis', 'Problem Solving'],
       icon: <User size={24} className="text-amber-600 dark:text-amber-400" />
     },
     {
-      id: 'digital-presence',
-      title: 'Digital Presence & Virtual Leadership',
-      features: ['Mastering Remote Influence', 'On-Camera Charisma', 'Digital Etiquette'],
+      id: 'communication',
+      title: 'Communication & Presentation',
+      features: ['Communication Skills', 'Public Speaking', 'Presentation Skills'],
       icon: <Video size={24} className="text-amber-600 dark:text-amber-400" />
     },
     {
-      id: 'crisis-comm',
-      title: 'Strategic Crisis Communication',
-      features: ['Conflict De-escalation', 'Media Relations', 'Internal Change Management'],
+      id: 'interpersonal',
+      title: 'Interpersonal & Team Dynamics',
+      features: ['Interpersonal and Teamwork', 'Johari Window'],
       icon: <Megaphone size={24} className="text-amber-600 dark:text-amber-400" />
     },
     {
       id: 'eq-training',
       title: 'Emotional Intelligence (EQ)',
-      features: ['Active Listening for Leaders', 'Empathy-Driven Feedback', 'Stress Resilience'],
+      features: ['Emotional Intelligence', 'Stress Management'],
       icon: <Brain size={24} className="text-amber-600 dark:text-amber-400" />
     }
   ];
