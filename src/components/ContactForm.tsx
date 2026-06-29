@@ -65,7 +65,12 @@ export default function ContactForm({ initialService, onServiceChange }: Contact
     setSubmitStatus('idle');
 
     try {
-      const response = await fetch('/api/inquire', {
+      // 1. Define the base URL using Vite's environment variables
+      // cast import.meta to any to avoid TS error: Property 'env' does not exist on type 'ImportMeta'
+      const API_URL = (import.meta as any).env?.VITE_API_URL || '';
+      
+      // 2. Add the base URL to your fetch path
+      const response = await fetch(`${API_URL}/api/inquire`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
