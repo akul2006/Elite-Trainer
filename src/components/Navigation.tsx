@@ -96,7 +96,7 @@ export default function Navigation() {
           }}
           className="text-lg md:text-xl font-bold tracking-tighter text-primary font-display"
         >
-          ELITE COMMUNICATOR
+          ELITE TRAINER
         </a>
 
         {/* Desktop Links */}

@@ -17,10 +17,10 @@ export default function Footer() {
         {/* Left branding copyright info */}
         <div className="space-y-3">
           <p className="text-lg md:text-xl font-bold text-primary font-display tracking-tight">
-            ELITE COMMUNICATOR
+            ELITE TRAINER
           </p>
           <p className="text-xs sm:text-sm text-on-surface-variant leading-relaxed max-w-sm">
-            © {currentYear} Elite Communicator. All rights reserved.
+            © {currentYear} Elite Trainer. All rights reserved.
           </p>
           <p className="text-xs sm:text-sm text-on-surface-variant leading-relaxed max-w-sm">
             Dream Big and Make It Happen.
