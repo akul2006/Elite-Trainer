@@ -10,26 +10,26 @@ interface GalleryItem {
 
 // 20 Clean Image objects with zero text attachments
 const galleryItems: GalleryItem[] = [
-  { id: 1, src: './images/img1.jpeg', size: 'large' },
-  { id: 2, src: './images/img2.jpeg', size: 'medium' },
-  { id: 3, src: './images/img3.jpeg', size: 'small' },
-  { id: 4, src: './images/img4.jpeg', size: 'medium' },
-  { id: 5, src: './images/img5.jpeg', size: 'large' },
-  // { id: 6, src: './images/img6.jpeg', size: 'small' },
-  // { id: 7, src: './images/img7.jpeg', size: 'medium' },
-  // { id: 8, src: './images/img8.jpeg', size: 'medium' },
-  // { id: 9, src: './images/img9.jpeg', size: 'large' },
-  // { id: 10, src: './images/img10.jpeg', size: 'small' },
-  // { id: 11, src: './images/img11.jpeg', size: 'medium' },
-  // { id: 12, src: './images/img12.jpeg', size: 'medium' },
-  // { id: 13, src: './images/img13.jpeg', size: 'large' },
-  // { id: 14, src: './images/img14.jpeg', size: 'small' },
-  // { id: 15, src: './images/img15.jpeg', size: 'medium' },
-  // { id: 16, src: './images/img16.jpeg', size: 'medium' },
-  // { id: 17, src: './images/img17.jpeg', size: 'large' },
-  // { id: 18, src: './images/img18.jpeg', size: 'small' },
-  // { id: 19, src: './images/img19.jpeg', size: 'medium' },
-  // { id: 20, src: './images/img20.jpeg', size: 'medium' }
+  { id: 1, src: './public/images/img1.jpeg', size: 'large' },
+  { id: 2, src: './public/images/img2.jpeg', size: 'medium' },
+  { id: 4, src: './public/images/img4.jpeg', size: 'medium' },
+  { id: 3, src: './public/images/img3.jpeg', size: 'small' },
+  { id: 5, src: './public/images/img5.jpeg', size: 'large' },
+  { id: 6, src: './public/images/img6.jpeg', size: 'small' },
+  { id: 7, src: './public/images/img7.jpeg', size: 'medium' },
+  { id: 8, src: './public/images/img8.jpeg', size: 'medium' },
+  { id: 9, src: './public/images/img9.jpeg', size: 'large' },
+  { id: 10, src: './public/images/img10.jpeg', size: 'small' },
+  { id: 11, src: './public/images/img11.jpeg', size: 'medium' },
+  { id: 12, src: './public/images/img12.jpeg', size: 'medium' },
+  { id: 13, src: './public/images/img13.jpeg', size: 'large' },
+  { id: 14, src: './public/images/img14.jpeg', size: 'small' },
+  { id: 15, src: './public/images/img15.jpeg', size: 'medium' },
+  { id: 16, src: './public/images/img16.jpeg', size: 'medium' },
+  { id: 17, src: './public/images/img17.jpeg', size: 'large' },
+  { id: 18, src: './public/images/img18.jpeg', size: 'small' },
+  { id: 19, src: './public/images/img19.jpeg', size: 'medium' },
+  { id: 20, src: './public/images/img20.jpeg', size: 'medium' }
 ];
 
 const gridSpanStyles = {
