@@ -37,7 +37,7 @@ export default function ClientMarquee() {
     <section className="py-12 border-y border-outline-variant/20 bg-surface dark:bg-surface-container-low transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 md:px-16">
         <p className="text-center text-xs font-bold text-outline mb-8 uppercase tracking-widest font-sans">
-          Trusted by Industry Leaders
+          Partners & Collaboration
         </p>
 
         {/* Brand Grid with Custom Interactive Hover States */}
@@ -77,7 +77,7 @@ export default function ClientMarquee() {
             <div className="flex items-center gap-2 mb-2">
               <Sparkles className="text-secondary" size={16} />
               <span className="text-xs font-bold uppercase tracking-wider text-primary">
-                Case Study Snapshot: {selectedCompany.name}
+                Impact Summary: {selectedCompany.name}
               </span>
             </div>
             <p className="text-sm text-on-surface-variant leading-relaxed mb-3">
