@@ -1,12 +1,15 @@
 import express from 'express';
 import nodemailer from 'nodemailer';
 import dotenv from 'dotenv';
+import cors from 'cors';
 
 // Load variables from your .env.local file
 dotenv.config({ path: '.env.local' });
 
 const app = express();
+app.use(cors());
 app.use(express.json());
+
 
 // Initialize Nodemailer with your system email router
 const transporter = nodemailer.createTransport({
