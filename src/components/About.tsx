@@ -13,10 +13,13 @@ export default function About() {
             transition={{ duration: 0.6 }}
           >
             <h2 className="text-3xl md:text-4xl font-semibold text-primary font-display mb-4">
-              Precision in Speech, Authority in Presence
+             Dream Big and Make It Happen
             </h2>
             <p className="text-base sm:text-lg text-on-surface-variant leading-relaxed">
-              Our philosophy centers on the transformative power of soft skills. In a digital-first world, the ability to communicate clearly and connect humanely is the ultimate competitive advantage.
+              An experienced trainer having 11 years of Sales and Training roles combined, I have trained close to 5000 trainees till now.
+            </p>
+            <p className="text-base sm:text-lg text-on-surface-variant leading-relaxed mt-4">
+            With a passion for facilitating growth and development, dedicated to equipping individuals with the tools and mindset necessary to excel in their careers and beyond and to continue making a meaningful impact in empowering the next generation of professionals to thrive in the corporate arena.
             </p>
           </motion.div>
         </div>

@@ -20,7 +20,10 @@ export default function Footer() {
             ELITE COMMUNICATOR
           </p>
           <p className="text-xs sm:text-sm text-on-surface-variant leading-relaxed max-w-sm">
-            © {currentYear} Elite Communicator. All rights reserved. Precision in Speech, Authority in Presence.
+            © {currentYear} Elite Communicator. All rights reserved.
+          </p>
+          <p className="text-xs sm:text-sm text-on-surface-variant leading-relaxed max-w-sm">
+            Dream Big and Make It Happen.
           </p>
         </div>
 
