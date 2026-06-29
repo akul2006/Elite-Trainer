@@ -13,7 +13,7 @@ export default function About() {
             transition={{ duration: 0.6 }}
           >
             <h2 className="text-3xl md:text-4xl font-semibold text-primary font-display mb-4">
-             Dream Big and Make It Happen
+             Dream Big and Make It Happen!
             </h2>
             <p className="text-base sm:text-lg text-on-surface-variant leading-relaxed">
               An experienced trainer having 11 years of Sales and Training roles combined, I have trained close to 5000 trainees till now.
