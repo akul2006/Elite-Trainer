@@ -24,19 +24,17 @@ export default function Experience() {
       details: [
         'Curated programs for 15+ sectors',
         'Built templates adopted by executive suites worldwide',
-        'Pioneered the "Executive Presence Index" methodology'
       ]
     },
     {
       id: 2,
-      stat: '4000+',
+      stat: '5000+',
       label: 'Trainees',
       desc: 'Empowered professionals reaching their full speaking potential.',
       icon: <GraduationCap className="text-secondary" size={24} />,
       details: [
-        'Over 1,200 senior VPs and board coaches',
-        'Alumni in prestigious Forbes lists',
-        '94% self-reported career advancement within 6 months'
+        'Over 1,200 students coached',
+        'Over 1,000 police officers trained',
       ]
     },
     {
@@ -46,9 +44,8 @@ export default function Experience() {
       desc: 'Partnering with premium companies to build trustworthy leaders.',
       icon: <Building2 className="text-secondary" size={24} />,
       details: [
-        'Delivered on-site across 4 continents',
+        'Delivered online across multiple states',
         'Custom modules for team cohesion',
-        'Included in annual leadership summits'
       ]
     }
   ];
@@ -58,7 +55,7 @@ export default function Experience() {
       <div className="max-w-7xl mx-auto">
         <div className="flex items-center gap-2 mb-6">
           <span className="h-[1px] w-12 bg-outline-variant" />
-          <span className="text-xs font-bold tracking-widest text-outline uppercase">Interactive Milestones</span>
+          <span className="text-xs font-bold tracking-widest text-outline uppercase">Milestones</span>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
