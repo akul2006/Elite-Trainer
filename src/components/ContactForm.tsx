@@ -155,11 +155,11 @@ export default function ContactForm({ initialService, onServiceChange }: Contact
                     onChange={handleInputChange}
                     className="w-full bg-surface-container-low border border-transparent text-sm rounded-lg p-4 outline-none appearance-none pr-10 text-primary font-medium focus:ring-1 ring-secondary cursor-pointer"
                   >
-                    <option value="corporate">Corporate Training</option>
-                    <option value="institutional">Institutional</option>
-                    <option value="executive">Executive 1-on-1</option>
-                    <option value="digital-presence">Digital Presence & Virtual Leadership</option>
-                    <option value="crisis-comm">Strategic Crisis Communication</option>
+                    <option value="corporate">Corporate & Professional Development</option>
+                    <option value="institutional">Institutional Readiness</option>
+                    <option value="executive">Executive & Leadership</option>
+                    <option value="communication">Communication & Presentation</option>
+                    <option value="interpersonal">Interpersonal & Team Dynamics</option>
                     <option value="eq-training">Emotional Intelligence (EQ)</option>
                   </select>
                   <ChevronDown size={16} className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none" />
