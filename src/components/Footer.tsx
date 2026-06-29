@@ -4,11 +4,11 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   const footerLinks = [
-    { name: 'Privacy Policy', href: '#' },
-    { name: 'Terms of Service', href: '#' },
+    { name: 'Privacy Policy', href: './terms.pdf' },
+    { name: 'Terms of Service', href: './terms.pdf' },
     { name: 'Consultation', href: '#contact' },
     { name: 'LinkedIn', href: 'https://linkedin.com/in/garima-s-spn' },
-    { name: 'Media Kit', href: '#' }
+    { name: 'Media Kit', href: '#gallery' }
   ];
 
   return (
