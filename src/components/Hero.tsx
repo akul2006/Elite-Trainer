@@ -25,19 +25,8 @@ export default function Hero() {
     },
   };
 
-  const scrollToServices = () => {
-    const el = document.getElementById('services');
-    if (el) {
-      const offset = 88;
-      const bodyRect = document.body.getBoundingClientRect().top;
-      const elementRect = el.getBoundingClientRect().top;
-      const elementPosition = elementRect - bodyRect;
-      const offsetPosition = elementPosition - offset;
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: 'smooth',
-      });
-    }
+  const showCV = () => {
+    window.open('/resume.pdf', '_blank', 'noreferrer');
   };
 
   return (
@@ -73,10 +62,10 @@ export default function Hero() {
 
           <motion.div variants={itemVariants} className="flex flex-wrap gap-4 pt-2">
             <button
-              onClick={scrollToServices}
+              onClick={showCV}
               className="px-8 py-4 bg-primary text-on-primary rounded-xl font-bold hover:bg-[#1a2333] hover:-translate-y-0.5 transition-all duration-300 shadow-md cursor-pointer"
             >
-              Explore Modules
+              View C.V.
             </button>
             <button
               onClick={() => setShowAudio(true)}
