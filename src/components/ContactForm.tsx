@@ -1,6 +1,15 @@
 import * as React from 'react';
 import { Mail, Share2, MessageSquare, Copy, Check, CheckCircle2, Building, UserCircle, School, ChevronDown, FileText, X } from 'lucide-react';
 
+// All available skills extracted from the Services section
+const AVAILABLE_SKILLS = [
+  'Business Etiquette', 'Communication Skills', 'Email Writing', 'Emotional Intelligence',
+  'Group Discussion Skills', 'Interpersonal and Teamwork', 'Interview Skills', 'Johari Window',
+  'Ownership', 'Personality Development', 'Presentation Skills', 'Problem Solving',
+  'Public Speaking', 'Resume Writing', 'Service Orientation', 'Stress Management',
+  'SWOT Analysis', 'Telephone Etiquette', 'Time Management', 'Training and Mentoring'
+].sort(); // Sorted alphabetically for easier reading
+
 interface FormState {
   name: string;
   email: string;
@@ -10,13 +19,25 @@ interface FormState {
   teamSize?: string;
   linkedinUrl?: string;
   institutionName?: string;
+  customSkills: string[]; // Added array for custom skill selection
 }
 
-interface FormErrors { name?: string; email?: string; message?: string; companyName?: string; linkedinUrl?: string; }
-interface ContactFormProps { initialService: string; onServiceChange: (serviceId: string) => void; }
+interface FormErrors { 
+  name?: string; 
+  email?: string; 
+  message?: string; 
+  companyName?: string; 
+  linkedinUrl?: string; 
+  customSkills?: string; // Validation for custom skills
+}
+
+interface ContactFormProps { 
+  initialService: string; 
+  onServiceChange: (serviceId: string) => void; 
+}
 
 export default function ContactForm({ initialService, onServiceChange }: ContactFormProps) {
-  const [form, setForm] = React.useState<FormState>({ name: '', email: '', subject: 'corporate', message: '' });
+  const [form, setForm] = React.useState<FormState>({ name: '', email: '', subject: 'corporate', message: '', customSkills: [] });
   const [errors, setErrors] = React.useState<FormErrors>({});
   const [copiedEmail, setCopiedEmail] = React.useState(false);
   const [isSubmitting, setIsSubmitting] = React.useState(false);
@@ -53,7 +74,9 @@ export default function ContactForm({ initialService, onServiceChange }: Contact
     if (!form.email.trim() || !emailRegex.test(form.email)) newErrors.email = 'Valid corporate email required';
     if (form.subject === 'corporate' && !form.companyName?.trim()) newErrors.companyName = 'Company name is required';
     if (form.subject === 'executive' && !form.linkedinUrl?.trim()) newErrors.linkedinUrl = 'LinkedIn profile link is required';
+    if (form.subject === 'custom' && form.customSkills.length === 0) newErrors.customSkills = 'Please select at least one skill';
     if (!form.message.trim()) newErrors.message = "Please describe your goals";
+    
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
@@ -66,7 +89,6 @@ export default function ContactForm({ initialService, onServiceChange }: Contact
 
     try {
       // 1. Define the base URL using Vite's environment variables
-      // cast import.meta to any to avoid TS error: Property 'env' does not exist on type 'ImportMeta'
       const API_URL = (import.meta as any).env?.VITE_API_URL || '';
       
       // 2. Add the base URL to your fetch path
@@ -91,7 +113,8 @@ export default function ContactForm({ initialService, onServiceChange }: Contact
           companyName: '',
           teamSize: '',
           linkedinUrl: '',
-          institutionName: ''
+          institutionName: '',
+          customSkills: [] // Reset custom skills array
         });
 
         setTimeout(() => {
@@ -133,7 +156,7 @@ export default function ContactForm({ initialService, onServiceChange }: Contact
                 <CheckCircle2 className="text-emerald-500 shrink-0 mt-0.5" size={18} />
                 <div>
                   <p className="font-bold">Submitted Successfully</p>
-                  <p className="text-xs opacity-90">Your inquiry has been stored in our system and sent successfully.</p>
+                  <p className="text-xs opacity-90">Your inquiry has been sent successfully.</p>
                 </div>
               </div>
             )}
@@ -166,6 +189,7 @@ export default function ContactForm({ initialService, onServiceChange }: Contact
                     <option value="communication">Communication & Presentation</option>
                     <option value="interpersonal">Interpersonal & Team Dynamics</option>
                     <option value="eq-training">Emotional Intelligence (EQ)</option>
+                    <option value="custom">Custom Skills Track</option>
                   </select>
                   <ChevronDown size={16} className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none" />
                 </div>
@@ -207,6 +231,34 @@ export default function ContactForm({ initialService, onServiceChange }: Contact
                 <div className="space-y-2 animate-in fade-in duration-200">
                   <label className="text-[10px] font-bold text-primary uppercase tracking-wider flex items-center gap-1"><School size={12} /> Institution Name</label>
                   <input name="institutionName" value={form.institutionName || ''} onChange={handleInputChange} className="w-full bg-surface-container-low border border-transparent text-sm rounded-lg p-4 outline-none" placeholder="Academy Name" />
+                </div>
+              )}
+
+              {/* CUSTOM SKILLS GRID SELECTION */}
+              {form.subject === 'custom' && (
+                <div className="space-y-2 animate-in fade-in duration-200">
+                  <label className="text-[10px] font-bold text-primary uppercase tracking-wider">Select Skill Sets</label>
+                  <div className={`grid grid-cols-1 sm:grid-cols-2 gap-3 max-h-52 overflow-y-auto p-4 bg-surface-container-low border rounded-lg ${errors.customSkills ? 'border-rose-400' : 'border-transparent'}`}>
+                    {AVAILABLE_SKILLS.map((skill) => (
+                      <label key={skill} className="flex items-center gap-2 cursor-pointer">
+                        <input
+                          type="checkbox"
+                          className="w-4 h-4 rounded border-outline-variant text-primary focus:ring-secondary accent-primary"
+                          checked={form.customSkills.includes(skill)}
+                          onChange={(e) => {
+                            if (e.target.checked) {
+                              setForm(prev => ({ ...prev, customSkills: [...prev.customSkills, skill] }));
+                            } else {
+                              setForm(prev => ({ ...prev, customSkills: prev.customSkills.filter(s => s !== skill) }));
+                            }
+                            if (errors.customSkills) setErrors(prev => ({ ...prev, customSkills: undefined }));
+                          }}
+                        />
+                        <span className="text-primary text-sm">{skill}</span>
+                      </label>
+                    ))}
+                  </div>
+                  {errors.customSkills && <p className="text-xs text-rose-500 mt-1">{errors.customSkills}</p>}
                 </div>
               )}
 
