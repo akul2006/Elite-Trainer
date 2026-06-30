@@ -90,7 +90,7 @@ export default function Hero() {
 
             <div className="rounded-2xl overflow-hidden shadow-[0px_30px_50px_rgba(15,23,42,0.1)] border border-white/20">
               <img
-                src="./images/hero.jpeg"
+                src="./images/hero.jpg"
                 alt="Executive portrait of mid-40s professional woman in light-flooded modern office representing master soft skills coach"
                 className="w-full h-auto object-cover aspect-[4/5]"
                 referrerPolicy="no-referrer"
