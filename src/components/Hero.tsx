@@ -65,7 +65,7 @@ export default function Hero() {
               onClick={showCV}
               className="px-8 py-4 bg-primary text-on-primary rounded-xl font-bold hover:bg-[#1a2333] hover:-translate-y-0.5 transition-all duration-300 shadow-md cursor-pointer"
             >
-              View C.V.
+              View Resumé
             </button>
             <button
               onClick={() => setShowAudio(true)}
