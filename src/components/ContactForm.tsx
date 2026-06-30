@@ -1,14 +1,13 @@
 import * as React from 'react';
 import { Mail, Share2, MessageSquare, Copy, Check, CheckCircle2, Building, UserCircle, School, ChevronDown, FileText, X } from 'lucide-react';
 
-// All available skills extracted from the Services section
 const AVAILABLE_SKILLS = [
   'Business Etiquette', 'Communication Skills', 'Email Writing', 'Emotional Intelligence',
   'Group Discussion Skills', 'Interpersonal and Teamwork', 'Interview Skills', 'Johari Window',
   'Ownership', 'Personality Development', 'Presentation Skills', 'Problem Solving',
   'Public Speaking', 'Resume Writing', 'Service Orientation', 'Stress Management',
   'SWOT Analysis', 'Telephone Etiquette', 'Time Management', 'Training and Mentoring'
-].sort(); // Sorted alphabetically for easier reading
+].sort(); 
 
 interface FormState {
   name: string;
@@ -19,7 +18,7 @@ interface FormState {
   teamSize?: string;
   linkedinUrl?: string;
   institutionName?: string;
-  customSkills: string[]; // Added array for custom skill selection
+  customSkills: string[]; 
 }
 
 interface FormErrors { 
@@ -28,7 +27,7 @@ interface FormErrors {
   message?: string; 
   companyName?: string; 
   linkedinUrl?: string; 
-  customSkills?: string; // Validation for custom skills
+  customSkills?: string; 
 }
 
 interface ContactFormProps { 
@@ -294,10 +293,10 @@ export default function ContactForm({ initialService, onServiceChange }: Contact
                   <span className="text-xs font-bold text-secondary group-hover:translate-x-1 transition-transform">Visit →</span>
                 </a>
 
-                <a href="./public/resume.pdf" target="_blank" rel="noreferrer noopener" className="flex items-center gap-4 p-4 bg-surface-container-lowest rounded-2xl border border-outline-variant/30 group transition-all hover:shadow-md">
+                <a href="/resume.pdf" target="_blank" rel="noreferrer noopener" className="flex items-center gap-4 p-4 bg-surface-container-lowest rounded-2xl border border-outline-variant/30 group transition-all hover:shadow-md">
                   <div className="w-10 h-10 bg-secondary-container/20 rounded-xl flex items-center justify-center text-secondary shrink-0"><FileText size={18} /></div>
                   <div className="flex-1 min-w-0">
-                    <p className="text-[10px] text-outline uppercase font-bold tracking-widest">View My Resume</p>
+                    <p className="text-[10px] text-outline uppercase font-bold tracking-widest">View My Resumé</p>
                     {/* <p className="font-semibold text-primary text-sm"></p> */}
                   </div>
                   <span className="text-xs font-bold text-secondary group-hover:translate-x-1 transition-transform">View →</span>
