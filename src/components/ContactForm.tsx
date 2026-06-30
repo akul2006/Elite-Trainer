@@ -43,7 +43,6 @@ export default function ContactForm({ initialService, onServiceChange }: Contact
   const [isSubmitting, setIsSubmitting] = React.useState(false);
   const [submitStatus, setSubmitStatus] = React.useState<'idle' | 'success' | 'error'>('idle');
 
-  // Downward sync: updates track value if card above is pressed
   React.useEffect(() => {
     if (initialService) {
       setForm((prev) => ({
@@ -61,7 +60,6 @@ export default function ContactForm({ initialService, onServiceChange }: Contact
     setForm((prev) => ({ ...prev, [name]: value }));
     if (errors[name as keyof FormErrors]) setErrors((prev) => ({ ...prev, [name]: undefined }));
 
-    // Upward sync: updates card layout above if select dropdown menu changes down here
     if (name === 'subject') {
       onServiceChange(value);
     }
@@ -88,11 +86,7 @@ export default function ContactForm({ initialService, onServiceChange }: Contact
     setSubmitStatus('idle');
 
     try {
-      // 1. Define the base URL using Vite's environment variables
-      const API_URL = (import.meta as any).env?.VITE_API_URL || '';
-      
-      // 2. Add the base URL to your fetch path
-      const response = await fetch(`${API_URL}/api/inquire`, {
+      const response = await fetch('/api/inquire', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
