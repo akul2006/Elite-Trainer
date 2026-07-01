@@ -1,3 +1,5 @@
+"use client";
+
 import * as React from 'react';
 import { Menu, X, Sun, Moon } from 'lucide-react';
 
@@ -18,6 +20,7 @@ const navLinks: LinkItem[] = [
 export default function Navigation() {
   const [activeSection, setActiveSection] = React.useState<string>('');
   const [mobileMenuOpen, setMobileMenuOpen] = React.useState<boolean>(false);
+  const [mounted, setMounted] = React.useState(false);
   const [theme, setTheme] = React.useState<string>(() => {
     if (typeof window !== 'undefined') {
       const savedTheme = localStorage.getItem('theme');
@@ -26,6 +29,10 @@ export default function Navigation() {
     }
     return 'light';
   });
+
+  React.useEffect(() => {
+    setMounted(true);
+  }, []);
 
   React.useEffect(() => {
     const root = window.document.documentElement;
@@ -45,7 +52,6 @@ export default function Navigation() {
     const handleScroll = () => {
       const scrollPosition = window.scrollY + 160;
 
-      // Find which section is currently on screen
       for (const link of navLinks) {
         const el = document.getElementById(link.href.substring(1));
         if (el) {
@@ -60,7 +66,7 @@ export default function Navigation() {
     };
 
     window.addEventListener('scroll', handleScroll);
-    handleScroll(); // initial call
+    handleScroll(); 
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
@@ -70,7 +76,7 @@ export default function Navigation() {
     const targetId = href.substring(1);
     const element = document.getElementById(targetId);
     if (element) {
-      const offset = 88; // height of fixed navigation approx.
+      const offset = 88;
       const bodyRect = document.body.getBoundingClientRect().top;
       const elementRect = element.getBoundingClientRect().top;
       const elementPosition = elementRect - bodyRect;
@@ -85,7 +91,7 @@ export default function Navigation() {
   };
 
   return (
-    <nav className="fixed top-0 left-0 w-full z-50 bg-surface-container-low/80 dark:bg-surface-container-low/85 backdrop-blur-md shadow-[0px_30px_50px_rgba(15,23,42,0.05)] border-b border-surface-container transition-colors duration-300">
+    <nav className="fixed top-0 left-0 w-full z-50 bg-surface-container-low/90 dark:bg-surface-container-low/95 backdrop-blur-md shadow-[0px_30px_50px_rgba(15,23,42,0.08)] dark:shadow-[0px_30px_50px_rgba(2,6,23,0.35)] border-b border-outline-variant/40 dark:border-outline-variant/20 transition-colors duration-300">
       <div className="flex justify-between items-center px-4 md:px-16 py-4 max-w-7xl mx-auto">
         <a 
           href="#" 
@@ -109,7 +115,7 @@ export default function Navigation() {
               className={`text-sm font-semibold tracking-wider uppercase transition-all duration-300 relative py-1 ${
                 activeSection === link.href 
                   ? 'text-primary font-bold' 
-                  : 'text-on-surface-variant hover:text-primary'
+                  : 'text-on-surface-variant hover:text-primary dark:text-on-surface-variant dark:hover:text-primary'
               }`}
             >
               {link.name}
@@ -124,16 +130,21 @@ export default function Navigation() {
         <div className="hidden md:flex items-center gap-4">
           <button
             onClick={toggleTheme}
-            className="p-2.5 rounded-xl border border-outline-variant/30 text-on-surface-variant hover:text-primary hover:bg-surface-container-low transition-all duration-300 cursor-pointer"
+            className="p-2.5 rounded-xl border border-outline-variant/40 dark:border-outline-variant/30 text-on-surface-variant hover:text-primary hover:bg-surface-container-low dark:hover:bg-surface-container transition-all duration-300 cursor-pointer"
             aria-label="Toggle visual theme"
           >
-            {theme === 'dark' ? <Sun size={18} /> : <Moon size={18} />}
+            {/* 3. CONDITIONALLY RENDER DESKTOP ICON */}
+            {mounted ? (
+              theme === 'dark' ? <Sun size={18} /> : <Moon size={18} />
+            ) : (
+              <div className="w-[18px] h-[18px]" />
+            )}
           </button>
 
           <a
             href="#contact"
             onClick={(e) => handleLinkClick(e, '#contact')}
-            className="inline-flex items-center justify-center px-6 py-2.5 bg-primary text-on-primary rounded-lg font-semibold text-sm hover:bg-secondary-container hover:text-on-secondary-container transition-all duration-300 shadow-sm"
+            className="inline-flex items-center justify-center px-6 py-2.5 bg-primary text-on-primary rounded-lg font-semibold text-sm hover:bg-secondary-container hover:text-on-secondary-container transition-all duration-300 shadow-sm dark:shadow-[0_10px_30px_rgba(0,0,0,0.25)]"
           >
             Book a Session
           </a>
@@ -146,7 +157,12 @@ export default function Navigation() {
             className="p-2 text-primary focus:outline-none hover:bg-surface-container-low rounded-lg transition-colors cursor-pointer"
             aria-label="Toggle theme"
           >
-            {theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
+            {/* 4. CONDITIONALLY RENDER MOBILE ICON */}
+            {mounted ? (
+              theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />
+            ) : (
+              <div className="w-[20px] h-[20px]" />
+            )}
           </button>
 
           <button
@@ -161,7 +177,7 @@ export default function Navigation() {
 
       {/* Mobile Dropdown Menu */}
       {mobileMenuOpen && (
-        <div className="md:hidden bg-surface-container-low border-t border-surface-container animate-fade-in transition-colors duration-300">
+        <div className="md:hidden bg-surface-container-low dark:bg-surface-container border-t border-outline-variant/40 dark:border-outline-variant/20 animate-fade-in transition-colors duration-300">
           <div className="flex flex-col px-4 py-4 space-y-4">
             {navLinks.map((link) => (
               <a
@@ -171,7 +187,7 @@ export default function Navigation() {
                 className={`text-base font-semibold py-2 px-3 rounded-lg ${
                   activeSection === link.href
                     ? 'bg-secondary-container/20 text-primary font-bold'
-                    : 'text-on-surface-variant hover:bg-surface-container-low'
+                    : 'text-on-surface-variant hover:bg-surface-container-low dark:hover:bg-surface-container'
                 }`}
               >
                 {link.name}

@@ -1,3 +1,5 @@
+"use client";
+
 import * as React from 'react';
 import { Users, GraduationCap, User, CheckCircle2, Video, Megaphone, Brain } from 'lucide-react';
 
@@ -57,14 +59,13 @@ export default function Services({ selectedTrack, onTrackSelect }: ServicesProps
     <section id="services" className="scroll-mt-20 py-20 bg-surface dark:bg-surface-container-low px-4 md:px-16 max-w-7xl mx-auto transition-colors duration-300">
       <div className="text-center mb-16">
         <h2 className="text-3xl md:text-4xl font-semibold text-primary font-display">
-          Specialized Training Tracks
+          Strategic Training Architectures
         </h2>
         <p className="text-base sm:text-lg text-on-surface-variant mt-3 max-w-2xl mx-auto">
-          Tailored programs designed for every stage of your professional journey.
+          Scalable L&D frameworks deployable as discrete consulting contracts or integrated full-time strategic initiatives.
         </p>
       </div>
 
-      {/* 6-Card Presentation Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {tracks.map((track) => (
           <div
@@ -77,17 +78,14 @@ export default function Services({ selectedTrack, onTrackSelect }: ServicesProps
             }`}
           >
             <div>
-              {/* Icon Container */}
               <div className="w-12 h-12 bg-amber-100 dark:bg-amber-950/30 rounded-xl flex items-center justify-center mb-6">
                 {track.icon}
               </div>
               
-              {/* Title */}
               <h3 className="text-xl font-bold text-primary mb-5 font-display leading-tight">
                 {track.title}
               </h3>
               
-              {/* Features List */}
               <ul className="space-y-3.5 text-xs text-on-surface-variant">
                 {track.features.map((feat) => (
                   <li key={feat} className="flex items-center gap-2.5">

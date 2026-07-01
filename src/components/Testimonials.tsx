@@ -1,3 +1,5 @@
+"use client";
+
 import * as React from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Quote, ChevronLeft, ChevronRight } from 'lucide-react';
@@ -47,10 +49,10 @@ export default function Testimonials() {
   };
 
   return (
-    <section id="testimonials" className="scroll-mt-20 py-24 bg-surface max-w-5xl mx-auto px-4 md:px-16 text-center">
-      <div className="flex flex-col items-center">
+    <section id="testimonials" className="scroll-mt-20 py-24  bg-surface dark:bg-surface-container-low max-w-5xl mx-auto px-4 md:px-16 text-center">
+      <div className="flex flex-col items-center rounded-[2rem] border border-outline-variant/30 p-6 sm:p-8 md:p-10 shadow-[0_18px_45px_rgba(15,23,42,0.06)] bg-surface-container-lowest dark:bg-surface-container dark:shadow-[0_18px_45px_rgba(2,6,23,0.25)]">
         {/* Large Aesthetic Quote Icon */}
-        <div className="w-16 h-16 rounded-full bg-secondary-container/10 flex items-center justify-center mb-8">
+        <div className="w-16 h-16 rounded-full bg-secondary-container/20 dark:bg-secondary-container/30 flex items-center justify-center mb-8">
           <Quote size={32} className="text-secondary fill-secondary" />
         </div>
 
@@ -65,12 +67,12 @@ export default function Testimonials() {
               transition={{ duration: 0.4, ease: 'easeOut' }}
               className="max-w-3xl"
             >
-              <blockquote className="text-lg sm:text-xl md:text-2xl italic font-medium text-primary leading-relaxed whitespace-pre-line">
+              <blockquote className="text-lg sm:text-xl md:text-2xl italic font-medium text-on-surface dark:text-on-surface leading-relaxed whitespace-pre-line">
                 "{reviews[activeIndex].quote}"
               </blockquote>
 
               <div className="mt-8">
-                <p className="font-extrabold text-base text-primary font-display">{reviews[activeIndex].author}</p>
+                <p className="font-extrabold text-base text-on-surface-variant dark:text-on-surface font-display">{reviews[activeIndex].author}</p>
               </div>
             </motion.div>
           </AnimatePresence>

@@ -1,3 +1,5 @@
+"use client";
+
 import * as React from 'react';
 import { motion } from 'motion/react';
 import { Award, GraduationCap, Building2, ChevronRight } from 'lucide-react';
@@ -18,34 +20,34 @@ export default function Experience() {
     {
       id: 1,
       stat: '11+',
-      label: 'Years Experience',
-      desc: 'Dedicated to refining executive communication across global markets.',
+      label: 'Years Global Strategy',
+      desc: 'Deploying high-impact L&D frameworks to elevate corporate communication and operational efficiency.',
       icon: <Award className="text-secondary" size={24} />,
       details: [
-        'Curated programs for 15+ sectors',
-        'Built templates adopted by executive suites worldwide',
+        'Curated strategic programs for 15+ industry sectors',
+        'Built scalable training templates adopted by executive suites worldwide',
       ]
     },
     {
       id: 2,
-      stat: '5000+',
-      label: 'Trainees',
-      desc: 'Empowered professionals reaching their full speaking potential.',
+      stat: '5,000+',
+      label: 'Professionals Trained',
+      desc: 'Demonstrated capacity to command large cohorts and drive measurable behavioral change.',
       icon: <GraduationCap className="text-secondary" size={24} />,
       details: [
-        'Over 1,200 students coached',
-        'Over 1,000 police officers trained',
+        'Over 1,200 corporate executives and mid-level managers coached',
+        'Over 1,000 law enforcement officers trained in high-stakes communication',
       ]
     },
     {
       id: 3,
       stat: '100+',
-      label: 'Corporate Workshops',
-      desc: 'Partnering with premium companies to build trustworthy leaders.',
+      label: 'Enterprise Engagements',
+      desc: 'Partnering with premium organizations to standardize internal training pipelines and resolve talent gaps.',
       icon: <Building2 className="text-secondary" size={24} />,
       details: [
-        'Delivered online across multiple states',
-        'Custom modules for team cohesion',
+        'Custom curriculum design deployed across distributed global teams',
+        'Specialized modules for organizational restructuring and team cohesion',
       ]
     }
   ];
@@ -55,7 +57,7 @@ export default function Experience() {
       <div className="max-w-7xl mx-auto">
         <div className="flex items-center gap-2 mb-6">
           <span className="h-[1px] w-12 bg-outline-variant" />
-          <span className="text-xs font-bold tracking-widest text-outline uppercase">Milestones</span>
+          <span className="text-xs font-bold tracking-widest text-outline uppercase">Operational Scale</span>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -74,7 +76,6 @@ export default function Experience() {
               }`}
               onClick={() => setActiveCard(activeCard === card.id ? null : card.id)}
             >
-              {/* Highlight line */}
               <div className="absolute top-0 left-0 w-full h-[3px] bg-secondary-container/60" />
 
               <div>
@@ -89,7 +90,6 @@ export default function Experience() {
                 <p className="text-sm text-on-surface-variant leading-relaxed mb-4">{card.desc}</p>
               </div>
 
-              {/* tional metric details toggle */}
               <div className="mt-2 pt-4 border-t border-surface-container">
                 <div className="flex items-center justify-between text-xs font-bold text-secondary uppercase tracking-wider hover:text-primary transition-colors">
                   <span>{activeCard === card.id ? 'Collapse Details' : 'View Impact Insights'}</span>

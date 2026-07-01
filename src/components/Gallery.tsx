@@ -1,3 +1,5 @@
+"use client";
+
 import * as React from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { X, ChevronLeft, ChevronRight, ZoomIn, Grid } from 'lucide-react';

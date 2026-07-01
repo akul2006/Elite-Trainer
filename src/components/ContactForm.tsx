@@ -1,3 +1,5 @@
+"use client";
+
 import * as React from 'react';
 import { Mail, Share2, MessageSquare, Copy, Check, CheckCircle2, Building, UserCircle, School, ChevronDown, FileText, X } from 'lucide-react';
 
@@ -139,7 +141,7 @@ export default function ContactForm({ initialService, onServiceChange }: Contact
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
 
-          <div className="bg-surface-container-lowest p-6 sm:p-10 rounded-2xl shadow-xl border border-outline-variant/20 relative">
+          <div className="bg-surface-container-lowest dark:bg-surface-container-lowest p-6 sm:p-10 rounded-2xl shadow-xl dark:shadow-[0_20px_45px_rgba(0,0,0,0.3)] border border-outline-variant/40 dark:border-outline-variant/20 relative">
             <h2 className="text-2xl sm:text-3xl font-bold text-primary font-display mb-6">
               Inquire about {/* <span className="text-secondary capitalize">{form.subject.replace('-', ' ')}</span> */}
             </h2>
@@ -174,7 +176,7 @@ export default function ContactForm({ initialService, onServiceChange }: Contact
                     name="subject"
                     value={form.subject}
                     onChange={handleInputChange}
-                    className="w-full bg-surface-container-low border border-transparent text-sm rounded-lg p-4 outline-none appearance-none pr-10 text-primary font-medium focus:ring-1 ring-secondary cursor-pointer"
+                    className="w-full bg-surface-container-low dark:bg-surface-container border border-transparent text-sm rounded-lg p-4 outline-none appearance-none pr-10 text-on-surface font-medium placeholder:text-on-surface-variant focus:ring-1 ring-secondary cursor-pointer"
                   >
                     <option value="corporate">Corporate & Professional Development</option>
                     <option value="institutional">Institutional Readiness</option>
@@ -184,18 +186,18 @@ export default function ContactForm({ initialService, onServiceChange }: Contact
                     <option value="eq-training">Emotional Intelligence (EQ)</option>
                     <option value="custom">Custom Skills Track</option>
                   </select>
-                  <ChevronDown size={16} className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none" />
+                  <ChevronDown size={16} className="absolute right-4 top-1/2 -translate-y-1/2 text-on-surface-variant pointer-events-none" />
                 </div>
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                 <div className="space-y-2">
                   <label className="text-[10px] font-bold text-primary uppercase tracking-wider">Full Name</label>
-                  <input name="name" value={form.name} onChange={handleInputChange} className={`w-full bg-surface-container-low border text-sm rounded-lg p-4 outline-none ${errors.name ? 'border-rose-400' : 'border-transparent focus:ring-1 ring-secondary'}`} placeholder="Jane Doe" />
+                  <input name="name" value={form.name} onChange={handleInputChange} className={`w-full bg-surface-container-low dark:bg-surface-container border text-sm rounded-lg p-4 outline-none text-on-surface placeholder:text-on-surface-variant ${errors.name ? 'border-rose-400' : 'border-transparent focus:ring-1 ring-secondary'}`} placeholder="Jane Doe" />
                 </div>
                 <div className="space-y-2">
                   <label className="text-[10px] font-bold text-primary uppercase tracking-wider">Work Email</label>
-                  <input name="email" type="email" value={form.email} onChange={handleInputChange} className={`w-full bg-surface-container-low border text-sm rounded-lg p-4 outline-none ${errors.email ? 'border-rose-400' : 'border-transparent focus:ring-1 ring-secondary'}`} placeholder="jane@company.com" />
+                  <input name="email" type="email" value={form.email} onChange={handleInputChange} className={`w-full bg-surface-container-low dark:bg-surface-container border text-sm rounded-lg p-4 outline-none text-on-surface placeholder:text-on-surface-variant ${errors.email ? 'border-rose-400' : 'border-transparent focus:ring-1 ring-secondary'}`} placeholder="jane@company.com" />
                 </div>
               </div>
 
@@ -204,11 +206,11 @@ export default function ContactForm({ initialService, onServiceChange }: Contact
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-5 animate-in fade-in duration-200">
                   <div className="space-y-2">
                     <label className="text-[10px] font-bold text-primary uppercase tracking-wider flex items-center gap-1"><Building size={12} /> Company Name</label>
-                    <input name="companyName" value={form.companyName || ''} onChange={handleInputChange} className={`w-full bg-surface-container-low border text-sm rounded-lg p-4 outline-none ${errors.companyName ? 'border-rose-400' : 'border-transparent'}`} placeholder="Global Tech Inc." />
+                    <input name="companyName" value={form.companyName || ''} onChange={handleInputChange} className={`w-full bg-surface-container-low dark:bg-surface-container border text-sm rounded-lg p-4 outline-none text-on-surface placeholder:text-on-surface-variant ${errors.companyName ? 'border-rose-400' : 'border-transparent'}`} placeholder="Global Tech Inc." />
                   </div>
                   <div className="space-y-2">
                     <label className="text-[10px] font-bold text-primary uppercase tracking-wider">Team Size</label>
-                    <input name="teamSize" type="number" value={form.teamSize || ''} onChange={handleInputChange} className="w-full bg-surface-container-low border border-transparent text-sm rounded-lg p-4 outline-none" placeholder="25" />
+                    <input name="teamSize" type="number" value={form.teamSize || ''} onChange={handleInputChange} className="w-full bg-surface-container-low dark:bg-surface-container border border-transparent text-sm rounded-lg p-4 outline-none text-on-surface placeholder:text-on-surface-variant" placeholder="25" />
                   </div>
                 </div>
               )}
@@ -216,14 +218,14 @@ export default function ContactForm({ initialService, onServiceChange }: Contact
               {form.subject === 'executive' && (
                 <div className="space-y-2 animate-in fade-in duration-200">
                   <label className="text-[10px] font-bold text-primary uppercase tracking-wider flex items-center gap-1"><UserCircle size={12} /> LinkedIn Profile URL</label>
-                  <input name="linkedinUrl" value={form.linkedinUrl || ''} onChange={handleInputChange} className={`w-full bg-surface-container-low border text-sm rounded-lg p-4 outline-none ${errors.linkedinUrl ? 'border-rose-400' : 'border-transparent'}`} placeholder="linkedin.com/in/username" />
+                  <input name="linkedinUrl" value={form.linkedinUrl || ''} onChange={handleInputChange} className={`w-full bg-surface-container-low dark:bg-surface-container border text-sm rounded-lg p-4 outline-none text-on-surface placeholder:text-on-surface-variant ${errors.linkedinUrl ? 'border-rose-400' : 'border-transparent'}`} placeholder="linkedin.com/in/username" />
                 </div>
               )}
 
               {form.subject === 'institutional' && (
                 <div className="space-y-2 animate-in fade-in duration-200">
                   <label className="text-[10px] font-bold text-primary uppercase tracking-wider flex items-center gap-1"><School size={12} /> Institution Name</label>
-                  <input name="institutionName" value={form.institutionName || ''} onChange={handleInputChange} className="w-full bg-surface-container-low border border-transparent text-sm rounded-lg p-4 outline-none" placeholder="Academy Name" />
+                  <input name="institutionName" value={form.institutionName || ''} onChange={handleInputChange} className="w-full bg-surface-container-low dark:bg-surface-container border border-transparent text-sm rounded-lg p-4 outline-none text-on-surface placeholder:text-on-surface-variant" placeholder="Academy Name" />
                 </div>
               )}
 
@@ -231,7 +233,7 @@ export default function ContactForm({ initialService, onServiceChange }: Contact
               {form.subject === 'custom' && (
                 <div className="space-y-2 animate-in fade-in duration-200">
                   <label className="text-[10px] font-bold text-primary uppercase tracking-wider">Select Skill Sets</label>
-                  <div className={`grid grid-cols-1 sm:grid-cols-2 gap-3 max-h-52 overflow-y-auto p-4 bg-surface-container-low border rounded-lg ${errors.customSkills ? 'border-rose-400' : 'border-transparent'}`}>
+                  <div className={`grid grid-cols-1 sm:grid-cols-2 gap-3 max-h-52 overflow-y-auto p-4 bg-surface-container-low dark:bg-surface-container border rounded-lg ${errors.customSkills ? 'border-rose-400' : 'border-transparent'}`}>
                     {AVAILABLE_SKILLS.map((skill) => (
                       <label key={skill} className="flex items-center gap-2 cursor-pointer">
                         <input
@@ -257,7 +259,7 @@ export default function ContactForm({ initialService, onServiceChange }: Contact
 
               <div className="space-y-2">
                 <label className="text-[10px] font-bold text-primary uppercase tracking-wider">Inquiry Requirements</label>
-                <textarea name="message" value={form.message} onChange={handleInputChange} rows={3} className={`w-full bg-surface-container-low border text-sm rounded-lg p-4 outline-none ${errors.message ? 'border-rose-400' : 'border-transparent focus:ring-1 ring-secondary'}`} />
+                <textarea name="message" value={form.message} onChange={handleInputChange} rows={3} className={`w-full bg-surface-container-low dark:bg-surface-container border text-sm rounded-lg p-4 outline-none text-on-surface placeholder:text-on-surface-variant ${errors.message ? 'border-rose-400' : 'border-transparent focus:ring-1 ring-secondary'}`} />
               </div>
 
               <button type="submit" disabled={isSubmitting} className="w-full py-4 bg-primary text-on-primary rounded-xl font-bold hover:opacity-90 transition-all flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50">
@@ -274,7 +276,7 @@ export default function ContactForm({ initialService, onServiceChange }: Contact
             </div>
 
             <div className="space-y-4">
-              <div className="flex items-center gap-4 p-5 bg-surface-container-lowest rounded-2xl border border-outline-variant/30 group">
+              <div className="flex items-center gap-4 p-5 bg-surface-container-lowest dark:bg-surface-container-lowest rounded-2xl border border-outline-variant/40 dark:border-outline-variant/20 group">
                 <div className="w-12 h-12 bg-secondary-container/20 rounded-xl flex items-center justify-center text-secondary shrink-0"><Mail size={22} /></div>
                 <div className="flex-1 min-w-0">
                   <p className="text-[10px] text-outline uppercase font-bold tracking-widest">Email Me</p>
@@ -284,7 +286,7 @@ export default function ContactForm({ initialService, onServiceChange }: Contact
               </div>
 
               <div className="space-y-3">
-                <a href="https://linkedin.com/in/garima-s-spn" target="_blank" rel="noreferrer noopener" className="flex items-center gap-4 p-5 bg-surface-container-lowest rounded-2xl border border-outline-variant/30 group transition-all hover:shadow-md">
+                <a href="https://linkedin.com/in/garima-s-spn" target="_blank" rel="noreferrer noopener" className="flex items-center gap-4 p-5 bg-surface-container-lowest dark:bg-surface-container-lowest rounded-2xl border border-outline-variant/40 dark:border-outline-variant/20 group transition-all hover:shadow-md">
                   <div className="w-12 h-12 bg-secondary-container/20 rounded-xl flex items-center justify-center text-secondary shrink-0"><Share2 size={22} /></div>
                   <div className="flex-1 min-w-0">
                     <p className="text-[10px] text-outline uppercase font-bold tracking-widest">LinkedIn Network</p>
@@ -293,7 +295,7 @@ export default function ContactForm({ initialService, onServiceChange }: Contact
                   <span className="text-xs font-bold text-secondary group-hover:translate-x-1 transition-transform">Visit →</span>
                 </a>
 
-                <a href="/resume.pdf" target="_blank" rel="noreferrer noopener" className="flex items-center gap-4 p-4 bg-surface-container-lowest rounded-2xl border border-outline-variant/30 group transition-all hover:shadow-md">
+                <a href="/resume.pdf" target="_blank" rel="noreferrer noopener" className="flex items-center gap-4 p-4 bg-surface-container-lowest dark:bg-surface-container-lowest rounded-2xl border border-outline-variant/40 dark:border-outline-variant/20 group transition-all hover:shadow-md">
                   <div className="w-10 h-10 bg-secondary-container/20 rounded-xl flex items-center justify-center text-secondary shrink-0"><FileText size={18} /></div>
                   <div className="flex-1 min-w-0">
                     <p className="text-[10px] text-outline uppercase font-bold tracking-widest">View My Resumé</p>
